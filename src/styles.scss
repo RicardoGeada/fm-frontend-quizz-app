@@ -1,41 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@use './styles/variables/colors.scss';
+@use './styles/variables/spacing.scss';
 @use './styles/fonts.scss';
 @use './styles/text-presets.scss';
 @use './styles/mixins.scss';
-
-:root {
-  /* colors */
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-grey-500: #626c7f;
-  --color-grey-50: #f4f6fa;
-  --color-blue-950: #2d3949;
-  --color-blue-900: #313e51;
-  --color-blue-850: #3b4d66;
-  --color-blue-500: #306aff;
-  --color-blue-300: #abc1e1;
-  --color-blue-100: #edf1f9;
-  --color-blue-50: #ebf0ff;
-  --color-green-500: #2fd887;
-  --color-green-100: #e0fdef;
-  --color-purple-600: #a729f5;
-  --color-purple-100: #f6e7ff;
-  --color-orange-400: #ff7e35;
-  --color-orange-50: #fff5ed;
-  --color-red-500: #ee5454;
-
-  /* spacing */
-  --spacing-100: 0.5rem;   /* 8px */
-  --spacing-200: 1rem;     /* 16px */
-  --spacing-300: 1.5rem;   /* 24px */
-  --spacing-400: 2rem;     /* 32px */
-  --spacing-500: 2.5rem;   /* 40px */
-  --spacing-600: 3rem;     /* 48px */
-  --spacing-800: 4rem;     /* 64px */
-  --spacing-1600: 8rem;    /* 128px */
-  --spacing-1800: 9rem;    /* 144px */
-  --spacing-2300: 11.5rem; /* 184px */
-}
 
 * {
   margin: 0;
