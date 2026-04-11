@@ -1,0 +1,103 @@
+@use 'sass:map';
+
+$text-presets: (
+  "1": (
+    style: normal,
+    weight: 500,
+    size: 9rem,       // 144px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "1--mobile": (
+    style: normal,
+    weight: 500,
+    size: 5.5rem,     // 88px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "2--medium": (
+    style: normal,
+    weight: 500,
+    size: 4rem,       // 64px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "2--mobile--medium": (
+    style: normal,
+    weight: 500,
+    size: 2.5rem,     // 40px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "2--light": (
+    style: normal,
+    weight: 300,
+    size: 4rem,       // 64px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "2--mobile--light": (
+    style: normal,
+    weight: 300,
+    size: 2.5rem,     // 40px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "3": (
+    style: normal,
+    weight: 500,
+    size: 2.25rem,    // 36px
+    line-height: 1.2,
+    letter-spacing: 0,
+  ),
+  "3--mobile": (
+    style: normal,
+    weight: 500,
+    size: 1.25rem,    // 20px
+    line-height: 1.2,
+    letter-spacing: 0,
+  ),
+  "4": (
+    style: normal,
+    weight: 500,
+    size: 1.75rem,    // 28px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "4--mobile": (
+    style: normal,
+    weight: 500,
+    size: 1.125rem,   // 18px
+    line-height: 1,
+    letter-spacing: 0,
+  ),
+  "5--medium": (
+    style: normal,
+    weight: 500,
+    size: 1.5rem,     // 24px
+    line-height: 1.5,
+    letter-spacing: 0,
+  ),
+  "5--regular": (
+    style: normal,
+    weight: 400,
+    size: 1.5rem,     // 24px
+    line-height: 1.5,
+    letter-spacing: 0,
+  ),
+  "5--mobile": (
+    style: italic,
+    weight: 400,
+    size: 0.875rem,   // 14px
+    line-height: 1.5,
+    letter-spacing: 0,
+  ),
+  "6": (
+    style: italic,
+    weight: 400,
+    size: 1.25rem,    // 20px
+    line-height: 1.5,
+    letter-spacing: 0,
+  ),
+);
+

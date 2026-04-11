@@ -1,0 +1,13 @@
+@mixin apply-text-preset($name) {
+  $preset: map.get($text-presets, $name);
+
+  @if $preset {
+    font-style: map.get($preset, style, normal);
+    font-weight: map.get($preset, weight);
+    font-size: map.get($preset, size);
+    line-height: map.get($preset, line-height);
+    letter-spacing: map.get($preset, letter-spacing);
+  } @else {
+    @warn "Text preset `#{$name}` not found.";
+  }
+}
