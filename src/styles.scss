@@ -11,6 +11,38 @@
   box-sizing: border-box;
 }
 
+/* light theme */
+body.light {
+  --bg-color: var(--color-grey-50);
+  --bg-image-pattern--mobile: url("./assets/images/pattern-background-mobile-light.svg");
+  --bg-image-pattern--tablet: url("./assets/images/pattern-background-tablet-light.svg");
+  --bg-image-pattern--desktop: url("./assets/images/pattern-background-desktop-light.svg");
+}
+
+/* dark theme */
+body.dark {
+  --bg-color: var(--color-blue-900);
+  --bg-image-pattern--mobile: url("./assets/images/pattern-background-mobile-dark.svg");
+  --bg-image-pattern--tablet: url("./assets/images/pattern-background-tablet-dark.svg");
+  --bg-image-pattern--desktop: url("./assets/images/pattern-background-desktop-dark.svg");
+} 
+
 body {
+  min-height: 100vh;
   font-family: 'Rubik', sans-serif;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image-pattern--mobile);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: 48em) {
+    background-image: var(--bg-image-pattern--tablet);
+    background-size: unset;
+  }
+
+  @media (min-width: 67.5em) {
+    background-image: var(--bg-image-pattern--desktop);
+    background-size: cover;
+    background-position: center;
+  }
 }
