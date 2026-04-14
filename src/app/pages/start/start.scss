@@ -1,0 +1,39 @@
+@use "./../../../styles/mixins.scss" as mixins;
+
+.header {
+    padding: var(--spacing-200) var(--spacing-300);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-500);
+    padding: var(--spacing-400) var(--spacing-300);
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    
+    &__title {
+        color: var(--color-blue-900);
+        @include mixins.apply-text-preset("2--mobile--medium")
+    }
+
+    &__subtitle {
+        color: var(--color-blue-900);
+        @include mixins.apply-text-preset("2--mobile--light")
+    }
+    
+    &__description {
+        color: var(--color-grey-500);
+        @include mixins.apply-text-preset("5--mobile")
+    }   
+}
+
+.quiz-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}

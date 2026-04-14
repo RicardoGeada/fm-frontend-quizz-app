@@ -1,5 +1,8 @@
+@use 'sass:map';
+@use './text-presets.scss' as tp;
+
 @mixin apply-text-preset($name) {
-  $preset: map.get($text-presets, $name);
+  $preset: map.get(tp.$text-presets, $name);
 
   @if $preset {
     font-style: map.get($preset, style, normal);
