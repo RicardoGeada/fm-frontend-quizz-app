@@ -1,6 +1,8 @@
 @use "./../../../styles/mixins.scss" as mixins;
 
 .header {
+    display: flex;
+    flex-direction: row-reverse;
     padding: var(--spacing-200) var(--spacing-300);
 }
 
