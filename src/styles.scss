@@ -12,7 +12,7 @@
 }
 
 /* light theme */
-body.light {
+html.light {
   --bg-color: var(--color-grey-50);
   --bg-image-pattern--mobile: url("./assets/images/pattern-background-mobile-light.svg");
   --bg-image-pattern--tablet: url("./assets/images/pattern-background-tablet-light.svg");
@@ -26,7 +26,7 @@ body.light {
 }
 
 /* dark theme */
-body.dark {
+html.dark {
   --bg-color: var(--color-blue-900);
   --bg-image-pattern--mobile: url("./assets/images/pattern-background-mobile-dark.svg");
   --bg-image-pattern--tablet: url("./assets/images/pattern-background-tablet-dark.svg");

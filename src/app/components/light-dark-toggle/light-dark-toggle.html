@@ -1,7 +1,7 @@
 <div class="light-dark-toggle">
   <!-- light image -->
   <div class="light-dark-toggle__icon-container">
-    @if (isDarkMode()) {
+    @if (theme.isDark()) {
       <img src="assets/images/icon-sun-light.svg" alt="Light mode icon" />
     } @else {
       <img src="assets/images/icon-sun-dark.svg" alt="Light mode icon" />
@@ -9,12 +9,12 @@
   </div>
   <!-- switch / toggle -->
   <label class="light-dark-toggle__switch">
-    <input type="checkbox" [checked]="isDarkMode()" (change)="toggle()" />
+    <input type="checkbox" [checked]="theme.isDark()" (change)="theme.toggle()" />
     <span class="light-dark-toggle__slider"></span>
   </label>
   <!-- dark image -->
   <div class="light-dark-toggle__icon-container">
-    @if (isDarkMode()) {
+    @if (theme.isDark()) {
       <img src="assets/images/icon-moon-light.svg" alt="Dark mode icon" />
     } @else {
       <img src="assets/images/icon-moon-dark.svg" alt="Dark mode icon" />

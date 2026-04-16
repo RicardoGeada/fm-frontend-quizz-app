@@ -1,4 +1,5 @@
 import { Component, model } from '@angular/core';
+import { ThemeService } from '../../services/theme/theme-service';
 
 @Component({
   selector: 'app-light-dark-toggle',
@@ -7,10 +8,5 @@ import { Component, model } from '@angular/core';
   styleUrl: './light-dark-toggle.scss',
 })
 export class LightDarkToggle {
-
-  isDarkMode = model<boolean>();
-
-  toggle() {
-    this.isDarkMode.set(!this.isDarkMode());
-  }
+  constructor(public theme: ThemeService) {}
 }
