@@ -1,4 +1,4 @@
-<button class="quiz-category-button">
+<button class="quiz-category-button" (click)="clicked.emit()">
   <div class="quiz-category-button__image" [style.backgroundColor]="imageBackgroundColor()">
     <img [src]="src()" alt="" />
   </div>

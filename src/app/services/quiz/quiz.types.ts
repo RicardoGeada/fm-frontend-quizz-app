@@ -1,0 +1,1 @@
+export type QuizCategory = 'html' | 'css' | 'js' | 'accessibility';

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-quiz-category-button',
@@ -10,4 +10,5 @@ export class QuizCategoryButton {
   src = input<string>('');
   text = input<string>('');
   imageBackgroundColor = input<string>('');
+  clicked = output<void>();
 }
