@@ -14,4 +14,8 @@ export class QuizService {
   getCategory() {
     return this.selectedCategory();
   }
+
+  hasCategory() {
+    return this.selectedCategory() !== null;
+  }
 }
