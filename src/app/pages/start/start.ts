@@ -14,7 +14,9 @@ import { Router } from '@angular/router';
 })
 export class Start {
 
-  constructor(private router: Router, private qs: QuizService) {}
+  constructor(private router: Router, private qs: QuizService) {
+    this.qs.clearCategory();
+  }
 
   selectCategory(category: QuizCategory) {
     this.qs.setCategory(category);

@@ -7,8 +7,14 @@ import { QuizCategory } from './quiz.types';
 export class QuizService {
   private selectedCategory = signal<QuizCategory | null>(null);
 
+  constructor() {
+    const savedCategory = localStorage.getItem("category") as QuizCategory | null;
+    if (savedCategory) this.selectedCategory.set(savedCategory);
+  }
+
   setCategory(category: QuizCategory) {
     this.selectedCategory.set(category);
+    localStorage.setItem('category', category);
   }
 
   getCategory() {
@@ -17,5 +23,10 @@ export class QuizService {
 
   hasCategory() {
     return this.selectedCategory() !== null;
+  }
+
+  clearCategory() {
+    this.selectedCategory.set(null);
+    localStorage.removeItem('category');
   }
 }
