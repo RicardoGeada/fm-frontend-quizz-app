@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { LightDarkToggle } from '../../components/light-dark-toggle/light-dark-toggle';
 import { QuizCategoryButton } from '../../components/quiz-category-button/quiz-category-button';
 import { QuizService } from '../../services/quiz/quiz-service';
-import { QuizCategory } from '../../services/quiz/quiz.types';
 import { Router } from '@angular/router';
+import { Quiz } from '../../services/quiz/quiz.types';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class Start {
     this.qs.clearCategory();
   }
 
-  selectCategory(category: QuizCategory) {
+  selectCategory(category: Quiz['title']) {
     this.qs.setCategory(category);
     this.router.navigate(['/quiz']);
   } 

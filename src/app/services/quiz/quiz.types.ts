@@ -1,4 +1,3 @@
-export type QuizCategory = 'html' | 'css' | 'js' | 'accessibility';
 export interface Quiz {
   title: string;
   icon: string;

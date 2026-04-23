@@ -1,5 +1,5 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { Quiz, QuizCategory } from './quiz.types';
+import { Quiz } from './quiz.types';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -8,16 +8,19 @@ import { HttpClient } from '@angular/common/http';
 export class QuizService {
   private http = inject(HttpClient);
 
-  private quizzes = signal<Quiz[]>([]);
-  private selectedCategory = signal<QuizCategory | null>(null);
+  quizzes = signal<Quiz[]>([]);
+  private selectedCategory = signal<Quiz['title'] | null>(null);
 
   constructor() {
-    const savedCategory = localStorage.getItem("category") as QuizCategory | null;
-    if (savedCategory) this.selectedCategory.set(savedCategory);
-    this.loadQuizzes();
+    this.init();
   }
 
-  setCategory(category: QuizCategory) {
+  setCategory(category: Quiz['title']) {
+    if (!this.isValidCategory(category)) {
+      console.warn('Invalid quiz category', category);
+      return;
+    }
+
     this.selectedCategory.set(category);
     localStorage.setItem('category', category);
   }
@@ -35,9 +38,23 @@ export class QuizService {
     localStorage.removeItem('category');
   }
 
-  private loadQuizzes() {
-    this.http.get<{ quizzes: Quiz[] }>('/assets/data/data.json').subscribe(data => {
+
+  /**
+   * Load quizzes and set selectedCategory
+   */ 
+  private init() {
+    this.http.get<{ quizzes: Quiz[] }>('/assets/data/data.json').subscribe((data) => {
       this.quizzes.set(data.quizzes);
-    })
+
+      // load selectedCategory
+      const savedCategory = localStorage.getItem('category');
+      if (savedCategory && this.isValidCategory(savedCategory)) {
+        this.selectedCategory.set(savedCategory);
+      }
+    });
+  }
+
+  private isValidCategory(category: string): category is Quiz['title'] {
+    return this.quizzes().some((q) => q.title === category);
   }
 }
