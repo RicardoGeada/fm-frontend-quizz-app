@@ -10,10 +10,8 @@
     <span class="headline__description">Pick a subject to get started.</span>
   </div>
   <div class="quiz-categories">
-    <!-- quiz category button -->
-    <app-quiz-category-button src="./assets/images/icon-html.svg" text="HTML" imageBackgroundColor="var(--color-orange-50)" (clicked)="selectCategory('html')"/>
-    <app-quiz-category-button src="./assets/images/icon-css.svg" text="CSS" imageBackgroundColor="var(--color-green-100)" (clicked)="selectCategory('css')"/>
-    <app-quiz-category-button src="./assets/images/icon-js.svg" text="Javascript" imageBackgroundColor="var(--color-blue-50)" (clicked)="selectCategory('js')"/>
-    <app-quiz-category-button src="./assets/images/icon-accessibility.svg" text="Accessibility" imageBackgroundColor="var(--color-purple-100)" (clicked)="selectCategory('accessibility')"/>
+    @for(quiz of this.qs.quizzes(); track quiz.title) {
+      <app-quiz-category-button [src]="quiz.icon" [text]="quiz.title" [imageBackgroundColor]="getCategoryColor(quiz.title)" (clicked)="selectCategory(quiz.title)"/>
+    }
   </div>
 </main>
