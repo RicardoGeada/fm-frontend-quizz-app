@@ -1,15 +1,20 @@
-import { Injectable, signal } from '@angular/core';
-import { QuizCategory } from './quiz.types';
+import { inject, Injectable, signal } from '@angular/core';
+import { Quiz, QuizCategory } from './quiz.types';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuizService {
+  private http = inject(HttpClient);
+
+  private quizzes = signal<Quiz[]>([]);
   private selectedCategory = signal<QuizCategory | null>(null);
 
   constructor() {
     const savedCategory = localStorage.getItem("category") as QuizCategory | null;
     if (savedCategory) this.selectedCategory.set(savedCategory);
+    this.loadQuizzes();
   }
 
   setCategory(category: QuizCategory) {
@@ -28,5 +33,11 @@ export class QuizService {
   clearCategory() {
     this.selectedCategory.set(null);
     localStorage.removeItem('category');
+  }
+
+  private loadQuizzes() {
+    this.http.get<{ quizzes: Quiz[] }>('/assets/data/data.json').subscribe(data => {
+      this.quizzes.set(data.quizzes);
+    })
   }
 }
