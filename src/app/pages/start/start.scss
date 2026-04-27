@@ -3,6 +3,8 @@
 .header {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
+    height: 72px;
     padding: var(--spacing-200) var(--spacing-300);
 }
 

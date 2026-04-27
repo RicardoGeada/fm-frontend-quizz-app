@@ -5,7 +5,7 @@
   $preset: map.get(tp.$text-presets, $name);
 
   @if $preset {
-    font-style: map.get($preset, style, normal);
+    font-style: map.get($preset, style);
     font-weight: map.get($preset, weight);
     font-size: map.get($preset, size);
     line-height: map.get($preset, line-height);

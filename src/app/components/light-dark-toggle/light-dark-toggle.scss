@@ -2,12 +2,11 @@
   width: fit-content;
   display: flex;
   align-items: center;
-  gap: var(--spacing-200);
-  padding: var(--spacing-200);
+  gap: var(--spacing-100);
 
   &__icon-container {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
 
     img {
       width: 100%;
@@ -19,8 +18,8 @@
   &__switch {
     position: relative;
     display: inline-block;
-    height: 28px;
-    width: 48px;
+    height: 20px;
+    width: 32px;
 
     input {
       opacity: 0;
@@ -28,9 +27,9 @@
       height: 0;
 
       &:checked + .light-dark-toggle__slider:before {
-        -webkit-transform: translateX(20px);
-        -ms-transform: translateX(20px);
-        transform: translateX(20px);
+        -webkit-transform: translateX(12px);
+        -ms-transform: translateX(12px);
+        transform: translateX(12px);
       }
 
       &:focus-visible + .light-dark-toggle__slider {
@@ -54,8 +53,8 @@
     &::before {
       position: absolute;
       content: '';
-      width: 20px;
-      height: 20px;
+      width: 12px;
+      height: 12px;
       left: 4px;
       bottom: 4px;
       background-color: var(--color-white);
