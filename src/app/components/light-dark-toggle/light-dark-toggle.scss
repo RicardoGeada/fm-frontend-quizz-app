@@ -1,12 +1,18 @@
 .light-dark-toggle {
+  --icon-size: 16px;
+  --switch-height: 20px;
+  --switch-width: 32px;
+  --toggle-size: 12px;
+  --toggle-translate: 12px;
+
   width: fit-content;
   display: flex;
   align-items: center;
   gap: var(--spacing-100);
 
   &__icon-container {
-    width: 16px;
-    height: 16px;
+    width: var(--icon-size);
+    height: var(--icon-size);
 
     img {
       width: 100%;
@@ -18,8 +24,8 @@
   &__switch {
     position: relative;
     display: inline-block;
-    height: 20px;
-    width: 32px;
+    height: var(--switch-height);
+    width: var(--switch-width);
 
     input {
       opacity: 0;
@@ -27,9 +33,9 @@
       height: 0;
 
       &:checked + .light-dark-toggle__slider:before {
-        -webkit-transform: translateX(12px);
-        -ms-transform: translateX(12px);
-        transform: translateX(12px);
+        -webkit-transform: translateX(var((--toggle-translate)));
+        -ms-transform: translateX(var((--toggle-translate)));
+        transform: translateX(var((--toggle-translate)));
       }
 
       &:focus-visible + .light-dark-toggle__slider {
@@ -48,13 +54,13 @@
     border-radius: 999px;
     padding: 4px;
     background-color: var(--color-purple-600);
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease;
 
     &::before {
       position: absolute;
       content: '';
-      width: 12px;
-      height: 12px;
+      width: var(--toggle-size);
+      height: var(--toggle-size);
       left: 4px;
       bottom: 4px;
       background-color: var(--color-white);
@@ -62,5 +68,18 @@
       -webkit-transition: 0.4s;
       transition: 0.4s;
     }
+  }
+}
+
+/* layout - tablet */
+@media (min-width: 48em) {
+  .light-dark-toggle {
+    --icon-size: 20px;
+    --switch-height: 28px;
+    --switch-width: 48px;
+    --toggle-size: 20px;
+    --toggle-translate: 20px;
+
+    gap: var(--spacing-200);
   }
 }

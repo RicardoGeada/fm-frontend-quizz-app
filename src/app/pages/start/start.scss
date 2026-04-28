@@ -1,43 +1,71 @@
-@use "./../../../styles/mixins.scss" as mixins;
+@use './../../../styles/mixins.scss' as mixins;
 
 .header {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    height: 72px;
-    padding: var(--spacing-200) var(--spacing-300);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 72px;
+  padding: var(--spacing-200) var(--spacing-300);
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-500);
-    padding: var(--spacing-400) var(--spacing-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+  padding: var(--spacing-400) var(--spacing-300);
 }
 
 .headline {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-200);
-    
-    &__title {
-        color: var(--color-text-primary);
-        @include mixins.apply-text-preset("2--mobile--medium")
-    }
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
 
-    &__subtitle {
-        color: var(--color-text-primary);
-        @include mixins.apply-text-preset("2--mobile--light")
-    }
-    
-    &__description {
-        color: var(--color-text-secondary);
-        @include mixins.apply-text-preset("5--mobile")
-    }   
+  &__title {
+    color: var(--color-text-primary);
+    @include mixins.apply-text-preset('2--mobile--medium');
+  }
+
+  &__subtitle {
+    color: var(--color-text-primary);
+    @include mixins.apply-text-preset('2--mobile--light');
+  }
+
+  &__description {
+    color: var(--color-text-secondary);
+    @include mixins.apply-text-preset('5--mobile');
+  }
 }
 
 .quiz-categories {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+/* layout - tablet */
+@media (min-width: 48em) {
+  .header {
+    height: unset;
+    padding: var(--spacing-700) var(--spacing-800) 0;
+  }
+  .content {
+    gap: var(--spacing-800);
+    padding: var(--spacing-500) var(--spacing-800);
+  }
+  .headline {
+    &__title {
+      @include mixins.apply-text-preset('2--medium');
+    }
+
+    &__subtitle {
+      @include mixins.apply-text-preset('2--light');
+    }
+
+    &__description {
+      @include mixins.apply-text-preset('6');
+    }
+  }
+  .quiz-categories {
+    gap: var(--spacing-300);
+  }
 }
