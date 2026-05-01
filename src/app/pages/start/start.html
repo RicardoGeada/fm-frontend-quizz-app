@@ -1,17 +1,24 @@
-<header class="header">
-  <app-light-dark-toggle />
-</header>
-<main class="content">
-  <div class="headline">
-    <h1 class="headline__title">
-      <span class="headline__subtitle">Welcome to the</span><br>
-      <span>Frontend Quiz!</span>
-    </h1>
-    <span class="headline__description">Pick a subject to get started.</span>
-  </div>
-  <div class="quiz-categories">
-    @for(quiz of this.qs.quizzes(); track quiz.title) {
-      <app-quiz-category-button [src]="quiz.icon" [text]="quiz.title" [imageBackgroundColor]="getCategoryColor(quiz.title)" (clicked)="selectCategory(quiz.title)"/>
-    }
-  </div>
-</main>
+<div class="layout">
+  <header class="header">
+    <app-light-dark-toggle />
+  </header>
+  <main class="content">
+    <div class="headline">
+      <h1 class="headline__title">
+        <span class="headline__subtitle">Welcome to the</span><br />
+        <span>Frontend Quiz!</span>
+      </h1>
+      <span class="headline__description">Pick a subject to get started.</span>
+    </div>
+    <div class="quiz-categories">
+      @for (quiz of this.qs.quizzes(); track quiz.title) {
+        <app-quiz-category-button
+          [src]="quiz.icon"
+          [text]="quiz.title"
+          [imageBackgroundColor]="getCategoryColor(quiz.title)"
+          (clicked)="selectCategory(quiz.title)"
+        />
+      }
+    </div>
+  </main>
+</div>
